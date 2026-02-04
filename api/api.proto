@@ -3455,6 +3455,11 @@ message KafkaActionMsg {
   bytes stream = 6;
 }
 
+message UpdateAIAgentRequest {
+  int64 channel_id = 1;
+  string room_name = 2;
+}
+
 message ParticipantInfo {
   enum State {
     // websocket' connected, but not offered yet
@@ -3495,3 +3500,4 @@ message ParticipantInfo {
   string identity = 2;
   State state = 3;
 }
+

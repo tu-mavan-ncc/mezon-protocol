@@ -221,8 +221,8 @@ message Envelope {
 }
 
 message UpdateLocalCacheEvent {
-  repeated int64 user_ids = 1;
-  repeated int64 channel_ids = 2;
+  repeated int64 params1 = 1;
+  repeated int64 params2 = 2;
 }
 
 message FollowEvent {
@@ -438,7 +438,7 @@ message ChannelMessageAck {
 
 message EphemeralMessageSend {
   ChannelMessageSend message = 1;
-  int64 receiver_id = 2;
+  repeated int64 receiver_ids = 2;
 }
 
 message QuickMenuDataEvent {
