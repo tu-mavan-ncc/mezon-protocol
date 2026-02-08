@@ -1060,22 +1060,23 @@ message InviteUserRequest {
 
 // Add link invite users to.
 message InviteUserRes {
-   // id clan to add link to .
-   int64 clan_id = 1;
-   // id channel to add link to.
-   int64 channel_id = 2;
-   // clan name
-   string clan_name = 3;
+  // id clan to add link to .
+  int64 clan_id = 1;
+  // id channel to add link to.
+  int64 channel_id = 2;
+  // clan name
+  string clan_name = 3;
   // channel name
   string channel_label = 4;
   // check user exist
   bool user_joined = 5;
   // expiry_time
   uint32 expiry_time_seconds = 6;
-  //
-  api.ChannelDescription channel_desc = 7;
-  string clan_logo = 8;
-  int32 member_count = 9;
+  string clan_logo = 7;
+  int32 member_count = 8;
+  string banner = 9;
+  string community_banner = 10;
+  bool is_community = 11;
 }
 
 // Add link invite users to.

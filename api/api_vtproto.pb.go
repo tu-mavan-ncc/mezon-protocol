@@ -5136,25 +5136,39 @@ func (m *InviteUserRes) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 		i -= len(m.unknownFields)
 		copy(dAtA[i:], m.unknownFields)
 	}
+	if m.IsCommunity {
+		i--
+		if m.IsCommunity {
+			dAtA[i] = 1
+		} else {
+			dAtA[i] = 0
+		}
+		i--
+		dAtA[i] = 0x58
+	}
+	if len(m.CommunityBanner) > 0 {
+		i -= len(m.CommunityBanner)
+		copy(dAtA[i:], m.CommunityBanner)
+		i = protohelpers.EncodeVarint(dAtA, i, uint64(len(m.CommunityBanner)))
+		i--
+		dAtA[i] = 0x52
+	}
+	if len(m.Banner) > 0 {
+		i -= len(m.Banner)
+		copy(dAtA[i:], m.Banner)
+		i = protohelpers.EncodeVarint(dAtA, i, uint64(len(m.Banner)))
+		i--
+		dAtA[i] = 0x4a
+	}
 	if m.MemberCount != 0 {
 		i = protohelpers.EncodeVarint(dAtA, i, uint64(m.MemberCount))
 		i--
-		dAtA[i] = 0x48
+		dAtA[i] = 0x40
 	}
 	if len(m.ClanLogo) > 0 {
 		i -= len(m.ClanLogo)
 		copy(dAtA[i:], m.ClanLogo)
 		i = protohelpers.EncodeVarint(dAtA, i, uint64(len(m.ClanLogo)))
-		i--
-		dAtA[i] = 0x42
-	}
-	if m.ChannelDesc != nil {
-		size, err := m.ChannelDesc.MarshalToSizedBufferVT(dAtA[:i])
-		if err != nil {
-			return 0, err
-		}
-		i -= size
-		i = protohelpers.EncodeVarint(dAtA, i, uint64(size))
 		i--
 		dAtA[i] = 0x3a
 	}
@@ -22498,16 +22512,23 @@ func (m *InviteUserRes) SizeVT() (n int) {
 	if m.ExpiryTimeSeconds != 0 {
 		n += 1 + protohelpers.SizeOfVarint(uint64(m.ExpiryTimeSeconds))
 	}
-	if m.ChannelDesc != nil {
-		l = m.ChannelDesc.SizeVT()
-		n += 1 + l + protohelpers.SizeOfVarint(uint64(l))
-	}
 	l = len(m.ClanLogo)
 	if l > 0 {
 		n += 1 + l + protohelpers.SizeOfVarint(uint64(l))
 	}
 	if m.MemberCount != 0 {
 		n += 1 + protohelpers.SizeOfVarint(uint64(m.MemberCount))
+	}
+	l = len(m.Banner)
+	if l > 0 {
+		n += 1 + l + protohelpers.SizeOfVarint(uint64(l))
+	}
+	l = len(m.CommunityBanner)
+	if l > 0 {
+		n += 1 + l + protohelpers.SizeOfVarint(uint64(l))
+	}
+	if m.IsCommunity {
+		n += 2
 	}
 	n += len(m.unknownFields)
 	return n
@@ -42822,42 +42843,6 @@ func (m *InviteUserRes) UnmarshalVT(dAtA []byte) error {
 			}
 		case 7:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ChannelDesc", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return protohelpers.ErrIntOverflow
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return protohelpers.ErrInvalidLength
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return protohelpers.ErrInvalidLength
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.ChannelDesc == nil {
-				m.ChannelDesc = &ChannelDescription{}
-			}
-			if err := m.ChannelDesc.UnmarshalVT(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field ClanLogo", wireType)
 			}
 			var stringLen uint64
@@ -42888,7 +42873,7 @@ func (m *InviteUserRes) UnmarshalVT(dAtA []byte) error {
 			}
 			m.ClanLogo = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 9:
+		case 8:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field MemberCount", wireType)
 			}
@@ -42907,6 +42892,90 @@ func (m *InviteUserRes) UnmarshalVT(dAtA []byte) error {
 					break
 				}
 			}
+		case 9:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Banner", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protohelpers.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return protohelpers.ErrInvalidLength
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return protohelpers.ErrInvalidLength
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Banner = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 10:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CommunityBanner", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protohelpers.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return protohelpers.ErrInvalidLength
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return protohelpers.ErrInvalidLength
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.CommunityBanner = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 11:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field IsCommunity", wireType)
+			}
+			var v int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protohelpers.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				v |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			m.IsCommunity = bool(v != 0)
 		default:
 			iNdEx = preIndex
 			skippy, err := protohelpers.Skip(dAtA[iNdEx:])
