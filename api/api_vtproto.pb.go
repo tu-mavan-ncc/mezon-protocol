@@ -20414,7 +20414,7 @@ func (m *ParticipantInfo) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ChannelEventAttachment) MarshalVT() (dAtA []byte, err error) {
+func (m *ChannelTimelineAttachment) MarshalVT() (dAtA []byte, err error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -20427,12 +20427,12 @@ func (m *ChannelEventAttachment) MarshalVT() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ChannelEventAttachment) MarshalToVT(dAtA []byte) (int, error) {
+func (m *ChannelTimelineAttachment) MarshalToVT(dAtA []byte) (int, error) {
 	size := m.SizeVT()
 	return m.MarshalToSizedBufferVT(dAtA[:size])
 }
 
-func (m *ChannelEventAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
+func (m *ChannelTimelineAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	if m == nil {
 		return 0, nil
 	}
@@ -20505,7 +20505,7 @@ func (m *ChannelEventAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
-func (m *ListChannelEventAttachment) MarshalVT() (dAtA []byte, err error) {
+func (m *ListChannelTimelineAttachment) MarshalVT() (dAtA []byte, err error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -20518,12 +20518,12 @@ func (m *ListChannelEventAttachment) MarshalVT() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ListChannelEventAttachment) MarshalToVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineAttachment) MarshalToVT(dAtA []byte) (int, error) {
 	size := m.SizeVT()
 	return m.MarshalToSizedBufferVT(dAtA[:size])
 }
 
-func (m *ListChannelEventAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	if m == nil {
 		return 0, nil
 	}
@@ -20550,7 +20550,7 @@ func (m *ListChannelEventAttachment) MarshalToSizedBufferVT(dAtA []byte) (int, e
 	return len(dAtA) - i, nil
 }
 
-func (m *ChannelEvent) MarshalVT() (dAtA []byte, err error) {
+func (m *ChannelTimeline) MarshalVT() (dAtA []byte, err error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -20563,12 +20563,12 @@ func (m *ChannelEvent) MarshalVT() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ChannelEvent) MarshalToVT(dAtA []byte) (int, error) {
+func (m *ChannelTimeline) MarshalToVT(dAtA []byte) (int, error) {
 	size := m.SizeVT()
 	return m.MarshalToSizedBufferVT(dAtA[:size])
 }
 
-func (m *ChannelEvent) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
+func (m *ChannelTimeline) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	if m == nil {
 		return 0, nil
 	}
@@ -20656,7 +20656,7 @@ func (m *ChannelEvent) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *ListChannelEventsRequest) MarshalVT() (dAtA []byte, err error) {
+func (m *ListChannelTimelineRequest) MarshalVT() (dAtA []byte, err error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -20669,12 +20669,12 @@ func (m *ListChannelEventsRequest) MarshalVT() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ListChannelEventsRequest) MarshalToVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineRequest) MarshalToVT(dAtA []byte) (int, error) {
 	size := m.SizeVT()
 	return m.MarshalToSizedBufferVT(dAtA[:size])
 }
 
-func (m *ListChannelEventsRequest) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineRequest) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	if m == nil {
 		return 0, nil
 	}
@@ -20719,7 +20719,7 @@ func (m *ListChannelEventsRequest) MarshalToSizedBufferVT(dAtA []byte) (int, err
 	return len(dAtA) - i, nil
 }
 
-func (m *ListChannelEventsResponse) MarshalVT() (dAtA []byte, err error) {
+func (m *ListChannelTimelineResponse) MarshalVT() (dAtA []byte, err error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -20732,12 +20732,12 @@ func (m *ListChannelEventsResponse) MarshalVT() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *ListChannelEventsResponse) MarshalToVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineResponse) MarshalToVT(dAtA []byte) (int, error) {
 	size := m.SizeVT()
 	return m.MarshalToSizedBufferVT(dAtA[:size])
 }
 
-func (m *ListChannelEventsResponse) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
+func (m *ListChannelTimelineResponse) MarshalToSizedBufferVT(dAtA []byte) (int, error) {
 	if m == nil {
 		return 0, nil
 	}
@@ -29055,7 +29055,7 @@ func (m *ParticipantInfo) SizeVT() (n int) {
 	return n
 }
 
-func (m *ChannelEventAttachment) SizeVT() (n int) {
+func (m *ChannelTimelineAttachment) SizeVT() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -29099,7 +29099,7 @@ func (m *ChannelEventAttachment) SizeVT() (n int) {
 	return n
 }
 
-func (m *ListChannelEventAttachment) SizeVT() (n int) {
+func (m *ListChannelTimelineAttachment) SizeVT() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -29115,7 +29115,7 @@ func (m *ListChannelEventAttachment) SizeVT() (n int) {
 	return n
 }
 
-func (m *ChannelEvent) SizeVT() (n int) {
+func (m *ChannelTimeline) SizeVT() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -29168,7 +29168,7 @@ func (m *ChannelEvent) SizeVT() (n int) {
 	return n
 }
 
-func (m *ListChannelEventsRequest) SizeVT() (n int) {
+func (m *ListChannelTimelineRequest) SizeVT() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -29196,7 +29196,7 @@ func (m *ListChannelEventsRequest) SizeVT() (n int) {
 	return n
 }
 
-func (m *ListChannelEventsResponse) SizeVT() (n int) {
+func (m *ListChannelTimelineResponse) SizeVT() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -82836,7 +82836,7 @@ func (m *ParticipantInfo) UnmarshalVT(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
+func (m *ChannelTimelineAttachment) UnmarshalVT(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -82859,10 +82859,10 @@ func (m *ChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ChannelEventAttachment: wiretype end group for non-group")
+			return fmt.Errorf("proto: ChannelTimelineAttachment: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ChannelEventAttachment: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ChannelTimelineAttachment: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -83129,7 +83129,7 @@ func (m *ChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ListChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
+func (m *ListChannelTimelineAttachment) UnmarshalVT(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -83152,10 +83152,10 @@ func (m *ListChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ListChannelEventAttachment: wiretype end group for non-group")
+			return fmt.Errorf("proto: ListChannelTimelineAttachment: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListChannelEventAttachment: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ListChannelTimelineAttachment: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -83187,7 +83187,7 @@ func (m *ListChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Attachments = append(m.Attachments, &ChannelEventAttachment{})
+			m.Attachments = append(m.Attachments, &ChannelTimelineAttachment{})
 			if err := m.Attachments[len(m.Attachments)-1].UnmarshalVT(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
@@ -83214,7 +83214,7 @@ func (m *ListChannelEventAttachment) UnmarshalVT(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ChannelEvent) UnmarshalVT(dAtA []byte) error {
+func (m *ChannelTimeline) UnmarshalVT(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -83237,10 +83237,10 @@ func (m *ChannelEvent) UnmarshalVT(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ChannelEvent: wiretype end group for non-group")
+			return fmt.Errorf("proto: ChannelTimeline: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ChannelEvent: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ChannelTimeline: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -83566,7 +83566,7 @@ func (m *ChannelEvent) UnmarshalVT(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ListChannelEventsRequest) UnmarshalVT(dAtA []byte) error {
+func (m *ListChannelTimelineRequest) UnmarshalVT(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -83589,10 +83589,10 @@ func (m *ListChannelEventsRequest) UnmarshalVT(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ListChannelEventsRequest: wiretype end group for non-group")
+			return fmt.Errorf("proto: ListChannelTimelineRequest: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListChannelEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ListChannelTimelineRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -83731,7 +83731,7 @@ func (m *ListChannelEventsRequest) UnmarshalVT(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *ListChannelEventsResponse) UnmarshalVT(dAtA []byte) error {
+func (m *ListChannelTimelineResponse) UnmarshalVT(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -83754,10 +83754,10 @@ func (m *ListChannelEventsResponse) UnmarshalVT(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: ListChannelEventsResponse: wiretype end group for non-group")
+			return fmt.Errorf("proto: ListChannelTimelineResponse: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: ListChannelEventsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: ListChannelTimelineResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -83789,7 +83789,7 @@ func (m *ListChannelEventsResponse) UnmarshalVT(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Events = append(m.Events, &ChannelEvent{})
+			m.Events = append(m.Events, &ChannelTimeline{})
 			if err := m.Events[len(m.Events)-1].UnmarshalVT(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}

@@ -3507,7 +3507,7 @@ message ParticipantInfo {
 }
 
 // Channel Event Attachment
-message ChannelEventAttachment {
+message ChannelTimelineAttachment {
   int64 id = 1;
   string file_name = 2;
   string file_url = 3;
@@ -3521,12 +3521,12 @@ message ChannelEventAttachment {
 }
 
 // Channel Event Attachment List
-message ListChannelEventAttachment {
-  repeated ChannelEventAttachment attachments = 1;
+message ListChannelTimelineAttachment {
+  repeated ChannelTimelineAttachment attachments = 1;
 }
 
 // Channel Event
-message ChannelEvent {
+message ChannelTimeline {
   int64 id = 1;
   int64 clan_id = 2;
   int64 channel_id = 3;
@@ -3543,7 +3543,7 @@ message ChannelEvent {
 }
 
 // List Channel Events Request
-message ListChannelEventsRequest {
+message ListChannelTimelineRequest {
   int64 clan_id = 1;
   int64 channel_id = 2;
   int32 year = 3;
@@ -3553,6 +3553,6 @@ message ListChannelEventsRequest {
 }
 
 // List Channel Events Response
-message ListChannelEventsResponse {
-  repeated ChannelEvent events = 1;
+message ListChannelTimelineResponse {
+  repeated ChannelTimeline events = 1;
 }
