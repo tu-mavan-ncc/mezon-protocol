@@ -21,7 +21,7 @@ package mezon.api;
 
 import "google/protobuf/wrappers.proto";
 
-option go_package = "mezon-protocol/v2/api";
+option go_package = "github.com/mezonai/mezon-protocol/v2/api";
 
 option java_multiple_files = true;
 option java_outer_classname = "MezonApi";

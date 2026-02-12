@@ -6,13 +6,13 @@ package rtapi
 
 import (
 	fmt "fmt"
+	api "github.com/mezonai/mezon-protocol/v2/api"
 	protohelpers "github.com/planetscale/vtprotobuf/protohelpers"
 	wrapperspb "github.com/planetscale/vtprotobuf/types/known/wrapperspb"
 	proto "google.golang.org/protobuf/proto"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	wrapperspb1 "google.golang.org/protobuf/types/known/wrapperspb"
 	io "io"
-	api "mezon-protocol/v2/api"
 )
 
 const (
