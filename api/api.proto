@@ -3591,6 +3591,6 @@ message UpdateChannelTimelineResponse {
   ChannelTimeline event = 1;
 }
 
-message ListMutedChannelResponse {
-  int64 channel_id = 1;
+message MutedChannelList {
+  repeated int64 muted_list = 1;
 }
