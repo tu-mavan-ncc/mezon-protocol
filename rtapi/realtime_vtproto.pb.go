@@ -12,7 +12,7 @@ import (
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	wrapperspb1 "google.golang.org/protobuf/types/known/wrapperspb"
 	io "io"
-	api "mezon-api/v2/common/api"
+	api "mezon-protocol/v2/api"
 )
 
 const (
